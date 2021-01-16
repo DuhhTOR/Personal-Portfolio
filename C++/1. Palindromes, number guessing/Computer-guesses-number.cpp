@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <limits>
 
 
 int main () {
@@ -22,9 +23,9 @@ int main () {
 		std::cout << "\nVai sis ir jusu skaitlis: " << guessedNumber << "?\n"
 				  << "[0] - ne, [1] - ja: ";
 		std::cin >> firstUserInput;
-		while ((firstUserInput > 1 || firstUserInput < 0) || std::cin.fail()) {
+		while ((firstUserInput > 1 || firstUserInput < 0) || std::cin.fail() || std::cin.peek() != '\n') {
 			std::cin.clear();
-			std::cin.ignore(100, '\n');
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			std::cout << "Nepareiza ievade! Ievadiet [0] - ne, [1] - ja: ";
 			std::cin >> firstUserInput;
 		}
@@ -39,9 +40,9 @@ int main () {
 			std::cout << "Skaitlis ir mazaks vai lielaks par " << guessedNumber << "?\n";
 			std::cout << "[0] - mazaks, [1] - lielaks: ";
 			std::cin >> secondUserInput;
-			while ((secondUserInput > 1 || secondUserInput < 0) || std::cin.fail()) {
+			while ((secondUserInput > 1 || secondUserInput < 0) || std::cin.fail() || std::cin.peek() != '\n') {
 				std::cin.clear();
-				std::cin.ignore(100, '\n');
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 				std::cout << "Nepareiza ievade! Ievadiet [0] - mazaks, [1] - lielaks: ";
 				std::cin >> secondUserInput;
 			}

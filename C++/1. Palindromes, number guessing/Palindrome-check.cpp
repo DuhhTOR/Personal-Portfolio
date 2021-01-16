@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 
 
 int main() {
@@ -7,9 +8,9 @@ int main() {
 	
 	std::cout << "Ievadiet veselu skaitli, lai parbauditu, vai tas ir palindroms: ";
 	std::cin >> inputNumber;
-	while (std::cin.fail()) {
+	while (std::cin.fail() || std::cin.peek() != '\n') {
 		std::cin.clear();
-		std::cin.ignore(100, '\n');
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Nepareiza ievade! Ievadiet veselu skaitli: ";
 		std::cin >> inputNumber;
 	}

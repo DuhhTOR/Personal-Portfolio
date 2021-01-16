@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <limits>
 
 
 int main () {
@@ -8,7 +9,7 @@ int main () {
 	srand((unsigned) time(&t));
 	const int rangeLow = 0, rangeHigh = 100, tries = 10;
 	const int randomNumber = (rand() % (rangeHigh + 1)) + rangeLow;
-	int timesTried = 0, userInputNumber;
+	int timesTried = 0, inputNumber;
 	
 
 	std::cout << "Programma ir generejusi veselu skaitli robeza no " << rangeLow << " - " << rangeHigh << ".\n";
@@ -18,21 +19,21 @@ int main () {
 	do {
 		std::cout << "Atlikuso meginajumu skaits: " << tries - timesTried << "\n";
 		std::cout << "Minat skaitli: ";
-		std::cin >> userInputNumber;
-		while ((userInputNumber > rangeHigh || userInputNumber < rangeLow) || std::cin.fail()) {
+		std::cin >> inputNumber;
+		while ((inputNumber > rangeHigh || inputNumber < rangeLow) || std::cin.fail() || std::cin.peek() != '\n') {
 			std::cin.clear();
-			std::cin.ignore(100, '\n');
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			std::cout << "Nepareiza ievade! Ievadiet veselu skaitli robeza no " << rangeLow << " - " << rangeHigh << ": ";
-			std::cin >> userInputNumber;
+			std::cin >> inputNumber;
 		}
 		timesTried++;
 		
-		if (userInputNumber == randomNumber) {
+		if (inputNumber == randomNumber) {
 			std::cout << "\nSkaitlis uzminets ar " << timesTried << ". meginajumu!\nJus uzvarejat!\n\n";
 			break;
 		}
 
-		else if (randomNumber > userInputNumber) {
+		else if (randomNumber > inputNumber) {
 			std::cout << "\nSkaitlis ir lielaks par ievadito!\n";
 		}
 
