@@ -38,7 +38,7 @@ int main () {
 				rangeLow = (rangeLow + (rangeHigh + 1)) / 2;
 			}
 
-			std::cout << "Atlikuso meginajumu skaits: " << tries - timesTried << "\n";
+			std::cout << "Atlikuso meginajumu skaits: " << (tries - timesTried) << "\n";
 		}
 		
 		else {

@@ -40,7 +40,7 @@ int main () {
 	} while (tries != timesTried);
 	
 	if (tries == timesTried) {
-		std::cout << "Atlikuso meginajumu skaits: " << tries - timesTried << "\n";
+		std::cout << "Atlikuso meginajumu skaits: " << (tries - timesTried) << "\n";
 		std::cout << "Jus zaudejat! Pareiza atbilde: " << randomNumber << "\n\n";
 	}
 	
