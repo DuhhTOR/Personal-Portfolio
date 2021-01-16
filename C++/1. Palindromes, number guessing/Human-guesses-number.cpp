@@ -18,7 +18,7 @@ int main () {
 	
 
 	do {
-		std::cout << "Atlikuso meginajumu skaits: " << tries - timesTried << "\n";
+		std::cout << "Atlikuso meginajumu skaits: " << (tries - timesTried) << "\n";
 		std::cout << "Minat skaitli: ";
 		while ((std::cin >> userInput) && (userInput.find_first_not_of("1234567890") != std::string::npos) || (stoi(userInput) > rangeHigh)) {
 			std::cout << "Nepareiza ievade! Meginiet velreiz (" << rangeLow << " - " << rangeHigh << "): ";
