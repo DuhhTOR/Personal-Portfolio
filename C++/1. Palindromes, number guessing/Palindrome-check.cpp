@@ -1,30 +1,28 @@
 #include <iostream>
+#include <string>
 
 
 int main() {
-	int inputNumber, reverseNumber = 0;
+	std::string userInput;
+	int reverseNumber = 0;
 
 	
 	std::cout << "Ievadiet veselu skaitli, lai parbauditu, vai tas ir palindroms: ";
-	std::cin >> inputNumber;
-	while (std::cin.fail() || std::cin.peek() != '\n') {
-		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		std::cout << "Nepareiza ievade! Ievadiet veselu skaitli: ";
-		std::cin >> inputNumber;
+	while ((std::cin >> userInput) && (userInput.find_first_not_of("1234567890") != std::string::npos)) {
+		std::cout << "Nepareiza ievade! Meginiet velreiz: ";
 	}
 
 
-	for (int i = inputNumber; i > 0; i /= 10) {
+	for (int i = stoi(userInput); i > 0; i /= 10) {
 		reverseNumber = (reverseNumber * 10) + (i % 10);
 	}
 		
-	if(inputNumber == reverseNumber) {
-       	std::cout << inputNumber << " ir palindroms!\n\n";
+	if(stoi(userInput) == reverseNumber) {
+       	std::cout << userInput << " ir palindroms!\n\n";
 	}
 
    	else {
-       	std::cout << inputNumber << " nav palindroms!\n\n";
+       	std::cout << userInput << " nav palindroms!\n\n";
 	}
 	
 
