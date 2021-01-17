@@ -2,19 +2,19 @@
 #include "monitor.h"
 
 
-Monitor::Monitor(std::string monitorManufacturer, std::string monitorResolution, float monitorPrice){
+Monitor::Monitor(std::string monitorManufacturer, std::string monitorResolution, float monitorPrice) {
 	this->setMonitor(monitorManufacturer, monitorResolution, monitorPrice);
 }
 
 
-void Monitor::setMonitor(std::string monitorManufacturer, std::string monitorResolution, float monitorPrice){
+void Monitor::setMonitor(std::string monitorManufacturer, std::string monitorResolution, float monitorPrice) {
 	this->monitorManufacturer = monitorManufacturer;
 	this->monitorResolution = monitorResolution;
 	this->monitorPrice = monitorPrice;
 }
 
 
-void Monitor::printMonitor() const{
+void Monitor::printMonitor() const {
 	std::cout << "Razotajs = " << this->monitorManufacturer << "\n"
 			  << "Izskirtspeja = " << this->monitorResolution << "\n"
 			  << "Cena = " << this->monitorPrice << " EUR" << "\n";

@@ -1,3 +1,7 @@
+#ifndef MONITOR_H
+#define MONITOR_H
+
+
 #include <string>
 
 
@@ -15,3 +19,6 @@ class Monitor {
 		std::string monitorResolution;
 		float monitorPrice;
 };
+
+
+#endif

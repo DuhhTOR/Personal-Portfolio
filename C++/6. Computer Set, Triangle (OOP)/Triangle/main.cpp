@@ -3,7 +3,7 @@
 #include "triangle.h"
 
 
-int main () {
+int main() {
 	std::string userInput;
 	float a, b, c;
 	

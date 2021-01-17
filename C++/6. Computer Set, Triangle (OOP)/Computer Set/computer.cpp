@@ -2,20 +2,19 @@
 #include "computer.h"
 
 
-
-Computer::Computer(std::string computerCPU, std::string computerGPU, float computerPrice){
+Computer::Computer(std::string computerCPU, std::string computerGPU, float computerPrice) {
 	this->setComputer(computerCPU, computerGPU, computerPrice);
 }
 
 
-void Computer::setComputer(std::string computerCPU, std::string computerGPU, float computerPrice){
+void Computer::setComputer(std::string computerCPU, std::string computerGPU, float computerPrice) {
 	this->computerCPU = computerCPU;
 	this->computerGPU = computerGPU;
 	this->computerPrice = computerPrice;
 }
 
 
-void Computer::printComputer() const{
+void Computer::printComputer() const {
 	std::cout << "CPU = " << this->computerCPU << "\n"
 			  << "GPU = " << this->computerGPU << "\n"
 			  << "Cena = " << this->computerPrice << " EUR" << "\n";

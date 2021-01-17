@@ -1,3 +1,7 @@
+#ifndef TRIANGLE_H
+#define TRIANGLE_H
+
+
 class Triangle {
 	public:
 		Triangle(float = 0, float = 0, float = 0);
@@ -10,3 +14,6 @@ class Triangle {
 	private:
 		float a, b, c;
 };
+
+
+#endif
