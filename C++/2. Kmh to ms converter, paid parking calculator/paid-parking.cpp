@@ -1,4 +1,5 @@
-#include<iostream>
+#include <iostream>
+#include <string>
 
 
 float price (float hours) {
@@ -15,12 +16,16 @@ float price (float hours) {
 
 
 int main () {
+	std::string userInput;
 	float hours;
 
 
 	std::cout << "Ievadiet stundu skaitu: ";
-	std::cin >> hours;
-	
+	while ((std::cin >> userInput) && userInput.find_first_not_of("1234567890.") != std::string::npos) {
+		std::cout << "Nepareiza ievade! Meginiet velreiz: ";
+	}
+	hours = stof(userInput);
+
 	if (hours == 0.00) {
 		std::cout << "Par " << hours << "h, autostavvietas maksa ir 0 eiro!\n\n";
 	}
