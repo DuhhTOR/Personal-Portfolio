@@ -2,7 +2,7 @@
 #include <string>
 
 
-int main() {
+int main () {
 	std::string userInput;
 	int reverseNumber = 0;
 
