@@ -3,7 +3,7 @@
 #include <ctime>
 
 
-int main () {
+int main() {
 	time_t t;
 	srand((unsigned) time(&t));
 	const int M = 5;
