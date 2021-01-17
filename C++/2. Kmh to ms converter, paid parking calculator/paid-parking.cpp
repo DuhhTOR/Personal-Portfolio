@@ -2,7 +2,7 @@
 #include <string>
 
 
-float price (float hours) {
+float price(float hours) {
 	float sum = 2.00;								//minimala summa, lai atstatu masinu parkinga
 	float pricePerHour = 0.50;						//pec 3h, 0.50 eiro par katru stundu
 	
@@ -15,7 +15,7 @@ float price (float hours) {
 }
 
 
-int main () {
+int main() {
 	std::string userInput;
 	float hours;
 

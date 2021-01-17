@@ -1,7 +1,7 @@
 #include <iostream>
 
 
-bool palindromeChecker (int number) {
+bool palindromeChecker(int number) {
     int reverseNumber = 0;
 
 
@@ -19,7 +19,7 @@ bool palindromeChecker (int number) {
 }
   
 
-void printPalindrome (int fromNumber, int toNumber) { 
+void printPalindrome(int fromNumber, int toNumber) { 
     for (int i = fromNumber; i <= toNumber; i++) {
         if (palindromeChecker(i)) {
             std::cout << i << " ";
@@ -28,7 +28,7 @@ void printPalindrome (int fromNumber, int toNumber) {
 }
 
 
-int main () {
+int main() {
     printPalindrome(100000, 999999);
     
 

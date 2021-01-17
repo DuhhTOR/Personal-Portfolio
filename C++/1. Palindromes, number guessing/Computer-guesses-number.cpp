@@ -2,7 +2,7 @@
 #include <string>
 
 
-int main () {
+int main() {
 	int guessedNumber;
 	int rangeLow = 0, rangeHigh = 100;
 	const int tries = 10;
