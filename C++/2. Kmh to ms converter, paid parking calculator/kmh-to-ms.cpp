@@ -2,17 +2,17 @@
 #include <string>
 
 
-float convertToMS (float speedKMH) {
+float convertToMS(float speedKMH) {
 	return ((speedKMH * 1000) / 3600);
 }
 
 
-float meetTime (float firstObjectSpeed, float secondObjectSpeed, float objectDistance) {
+float meetTime(float firstObjectSpeed, float secondObjectSpeed, float objectDistance) {
 	return ((objectDistance * 1000) / (convertToMS(firstObjectSpeed) + convertToMS(secondObjectSpeed)));
 }
 
 
-int main () {
+int main() {
 	std::string userInput;
 	float firstObjectSpeed, secondObjectSpeed, objectDistance;
 
