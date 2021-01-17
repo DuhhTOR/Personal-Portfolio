@@ -4,7 +4,7 @@
 #include <string>
 
 
-int main () {
+int main() {
 	time_t t;
 	srand((unsigned) time(&t));
 	const int rangeLow = 0, rangeHigh = 100, tries = 10;
