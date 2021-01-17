@@ -1,0 +1,314 @@
+html {
+    font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
+    font-size: 1em;
+  }
+  
+  body{
+    margin: 0;
+    background: #eee;
+    line-height: 1.5;
+  }
+  
+  #header {
+    width: 100%;
+    min-height: 75px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    justify-content: space-between;
+    align-items: center;
+    background: #eee;
+  }
+  
+  #header-img {
+    height: 100%;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 0 0 50px;
+  }
+  
+  #nav-bar {
+    display: flex;
+    width: 40%;
+    margin: 0 50px 0 0;
+    justify-content: space-evenly;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  a:hover {
+    cursor: pointer;
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .nav-link {
+    margin: 0 10px;
+  }
+  
+  main {
+    margin: 100px auto 0 auto;
+  }
+  
+  main, footer {
+    width: 40%;
+  }
+  
+  #form {
+    margin: 0 0 100px 0;
+    text-align: center;
+  }
+  
+  #email {
+    width: 25%;
+    padding: 5px;
+  }
+  
+  #submit {
+    display: block;
+    margin: 15px auto 15px auto;
+    padding: 10px 20px;
+    border-style: none;
+    background: #f1c40f;
+    font-size: 1.125em;
+    font-weight: 1000;
+  }
+  
+  #submit:hover, .select-button:hover {
+    cursor: pointer;
+    background-color: orange;
+    transition: background-color 1s;
+  }
+  
+  #features {
+    display: grid;
+    grid-template-columns: 20% auto;
+    grid-template-rows: 150px 150px 150px auto;
+    grid-template-areas: "icon-1 description1"
+                         "icon-2 description2"
+                         "icon-3 description3"
+                         "video video";
+  }
+  
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: darkorange;
+    font-size: 3.5em;
+  }
+  
+  .description {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .description h3 {
+    font-size: 1.5em;
+  }
+  
+  .description h3, p {
+    margin: 0;
+  }
+  
+  #video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    grid-area: video;
+  }
+
+  #video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .grey-background {
+    background: #ddd;
+  }
+  
+  #pricing {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .buying-options {
+    width: 30%;
+    margin: 50px 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2.5px;
+    text-align: center;
+  }
+  
+  .product-name {
+    padding: 10px 0;
+    font-weight: 600;
+  }
+  
+  #pricing h2 {
+    margin: 15px 0;
+    font-size: 1.5em;
+    font-weight: 800;
+  }
+  
+  #pricing ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  #pricing li {
+    margin: 10px 0;
+  }
+  
+  .select-button {
+    margin: 15px 0;
+    padding: 10px 20px;
+    border-style: none;
+    background: #f1c40f;
+    font-size: 1.125em;
+  }
+  
+  footer {
+    margin: 50px auto 0 auto;
+    padding: 20px;
+    text-align: right;
+  }
+  
+  footer small {
+    user-select: none;
+  }
+  
+
+  @media (max-width:1920px){
+      main, footer {
+          width: 55%;
+      }
+  }
+
+  @media (max-width:1440px) {
+    #email {
+      width: 30%;
+    }
+    
+    main, footer {
+      width: 70%;
+    }
+  }
+  
+  @media (max-width:1024px) {
+    #email {
+      width: 35%;
+    }
+    
+    main, footer {
+      width: 80%;
+    }
+
+    #video-wrapper {
+        margin: 5vh 0;
+    }
+
+    #pricing {
+        display: block;
+    }
+    
+    .buying-options {
+        width: 50%;
+        margin: 10px auto;
+    }
+  }
+  
+  @media (max-width:768px) {
+    #header {
+        justify-content: space-evenly;
+    }
+      
+    #header-img {
+        display: none;
+      }
+      
+    #nav-bar {
+        display: flex;
+        width: 100%;
+        margin: 0 25px;
+    }
+
+    #email {
+      width: 50%;
+    }
+    
+    main {
+      width: 90%;
+    }
+    
+    #pricing {
+      display: block;
+    }
+  
+    .buying-options {
+      width: 65%;
+      margin: 10px auto;
+    }
+
+    footer {
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+    }
+}
+  
+  @media (max-width:425px) {
+    #nav-bar {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #email {
+      width: 45%;
+    }
+    
+    main {
+      width: 95%;
+    }
+    
+    #features {
+        display: block;
+    }
+
+    .icon {
+        display: none;
+    }
+    
+    .description {
+        width: 100%;
+        margin: 1vh auto;
+    }
+    
+    #pricing {
+      display: block;
+    }
+  
+    .buying-options {
+      width: 100%;
+      margin: 10px auto;
+    }
+}
+
+@media (max-width: 320px) {
+      #email {
+          width: 65%;
+      }
+  }

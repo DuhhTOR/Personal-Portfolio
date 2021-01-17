@@ -1,0 +1,84 @@
+/* ================================================== COLOR PALET ================================================== *//*
+RGB 85, 85, 85			TUMŠI PELĒKA (Galvenā izvēlne)
+RGB 255, 255, 255		BALTA (Izvēlnes nosaukumi)
+RGB 249, 76, 97			GAIŠI SARKANA (Atvērtā lapa)
+*/
+
+
+.line{
+	width:100%;
+}
+
+.line a{
+	text-decoration:none;
+}
+
+.line a:link, .line a:visited{
+	color:rgb(0, 0, 0);
+}
+
+.line a:hover{
+	color:rgb(249, 76, 97);
+	transition-duration:0.5s;
+}
+
+.category{
+	width:15%;
+	margin:0px 20px 25px 20px;
+	background:rgb(255, 255, 255);
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+}
+
+.category img{
+	display:block;
+	height:275px;
+	width:100%;
+	object-fit:cover;
+	background:rgb(255, 255, 255);
+}
+
+.category img:hover{
+	opacity:0.5;
+	transition-duration:0.5s;
+}
+
+.categoryName{
+	width:100%;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+}
+
+
+/* ------------------------------------------------------------------------ Media Queries --------------------------------------------------------------------------*/
+
+/* Laptop */
+@media all and (max-width:1024px){
+	.category{
+		width:20%;
+	}
+}
+
+/* Tablet */
+@media all and (max-width:880px){
+	.category{
+		width:45%;
+		margin:0px 10px 25px 10px;
+	}
+	
+	.category img{
+		height:250px;
+	}
+}
+
+/* Phone */
+@media all and (max-width:500px){
+	.category{
+		width:90%;
+		margin:0px 0px 50px 0px;
+	}
+	
+	.category img{
+		height:250px;
+	}
+}

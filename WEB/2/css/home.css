@@ -1,0 +1,165 @@
+/* ================================================== COLOR PALET ================================================== *//*
+RGB 85, 85, 85			TUMŠI PELĒKA (Galvenā izvēlne)
+RGB 255, 255, 255		BALTA (Izvēlnes nosaukumi)
+RGB 249, 76, 97			GAIŠI SARKANA (Atvērtā lapa)
+*/
+
+
+.row{
+	width:100%;
+	margin-bottom:25px;
+}
+
+.picture{
+	height:300px;
+	width:30%;
+}
+
+.picture a:hover{
+	opacity:0.5;
+	transition-duration:0.5s;
+}
+
+.picture img{
+	height:100%;
+	width:100%;
+	object-fit:cover;
+}
+
+.textBox{
+	width:35%;
+	margin:0px 0px 0px 25px;
+	border-radius:15px;
+	overflow: hidden;
+	background:rgb(255, 255, 255);
+}
+
+.productName{
+	width:100%;
+	border-top-right-radius:15px;
+	border-top-left-radius:15px;
+	background:rgb(255, 255, 255);
+}
+
+.productName a:link, .productName a:visited{
+	text-decoration:none;
+	color:rgb(0, 0, 0);
+}
+
+.productName a:hover{
+	color:rgb(249, 76, 97);
+	transition-duration:0.5s;
+}
+
+.productName span{
+	display:inline-block;
+	vertical-align:middle;
+	line-height:normal;
+}
+
+.redLine{
+	margin:0;
+	color:rgb(249, 76, 97);
+	text-align:center;
+	clear:right;
+	user-select:none;
+}
+
+.productDescription{
+	width:100%;
+	text-align:left;
+	background:rgb(255, 255, 255);
+}
+
+.productDescription div{
+	float:right;
+	margin:0px 16px 0px 16px;
+	text-align:right;
+}
+
+.alergies{
+	color:rgb(85, 85, 85);
+}
+
+.form{
+	width:80%;
+}
+
+#content table{
+	width:100%;
+	margin:0 auto 0 auto;
+	border:1px solid rgb(0, 0, 0);
+}
+
+#content table thead{
+	background:rgba(85, 85, 85, 0.1);
+}
+
+#content table td{
+	height:30px;
+	width:20%;
+	border:1px solid rgb(85, 85, 85);
+}
+
+#input{
+	margin:0;
+}
+
+#input input{
+	height:100%;
+	width:100%;
+	padding:0;
+	border:none;
+	font-size:100%;
+}
+
+#content tbody select{
+	height:100%;
+	width:100%;
+	padding:0;
+	border:none;
+	font-size:100%;
+}
+
+
+/*---------------------------------------------------------------------------- Media Queries -----------------------------------------------------------------------*/
+
+/* Laptop */
+@media all and (max-width:1225px){
+	.picture{
+		width:45%;
+	}
+	
+	.textBox{
+		width:45%;
+	}
+}
+
+/* Tablet */
+@media all and (max-width:800px){
+	.picture{
+		width:90%;
+	}
+	
+	.textBox{
+		width:90%;
+		margin:0;
+	}
+}
+
+/* phone */
+@media all and (max-width:450px){
+	.picture{
+		height:200px;
+		width:90%;
+	}
+	
+	.textBox{
+		width:100%;
+		margin:0;
+	}
+	
+	.form{
+		width:95%;
+}
+}

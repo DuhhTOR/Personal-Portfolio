@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "computer.h"
 #include "monitor.h"
 #include "computerSet.h"

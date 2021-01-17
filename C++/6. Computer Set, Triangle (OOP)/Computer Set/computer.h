@@ -1,5 +1,4 @@
-#ifndef COMPUTER_H
-#define COMPUTER_H
+#pragma once
 
 
 #include <string>
@@ -20,6 +19,3 @@ class Computer {
 		std::string computerGPU;
 		float computerPrice;
 };
-
-
-#endif

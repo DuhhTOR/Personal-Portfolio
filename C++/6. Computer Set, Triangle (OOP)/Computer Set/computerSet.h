@@ -1,5 +1,4 @@
-#ifndef COMPUTERSET_H
-#define COMPUTERSET_H
+#pragma once
 
 
 #include <string>
@@ -19,6 +18,3 @@ class ComputerSet {
 		Computer computer;
 		Monitor monitor;
 };
-
-
-#endif

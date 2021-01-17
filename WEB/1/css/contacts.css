@@ -1,0 +1,109 @@
+/* ================================================== COLOR PALET ================================================== *//*
+RGB 85, 85, 85			TUMŠI PELĒKA (Galvenā izvēlne)
+RGB 255, 255, 255		BALTA (Izvēlnes nosaukumi)
+RGB 249, 76, 97			GAIŠI SARKANA (Atvērtā lapa)
+*/
+
+
+.information{
+	height:500px;
+	width:25%;
+	margin-right:20px;
+}
+
+.information div{
+	height:150px;
+	width:100%;
+	border-radius:15px;
+	background:rgb(255, 255, 255);
+}
+
+.information h6{
+	user-select:none;
+}
+
+.middleInformation{
+	margin:23px 0px 23px 0px;
+}
+
+#googleMap{
+	height:500px;
+	width:45%;
+	margin-left:20px;
+	border:1px solid rgba(85, 85, 85, 0.5);
+}
+
+
+/* ------------------------------------------------------------------------ Media Queries --------------------------------------------------------------------------*/
+
+/* Large laptop*/
+@media all and (max-width:1400px){
+	.information{
+		height:auto;
+		width:35%;
+	}
+	
+	.information div{
+		height:auto;
+	}
+	
+	#googleMap{
+		width:50%;
+	}
+}
+
+/* Laptop */
+@media all and (max-width:1024px){
+	.information{
+		height:auto;
+		width:100%;
+		margin:0px 0px 25px 0px;
+	}
+	
+	.information div{
+		height:200px;
+		width:30%;
+	}
+	
+	.middleInformation{
+		margin:0px 20px 0px 20px;
+	}
+	
+	#googleMap{
+		height:450px;
+		width:80%;
+		margin:0;
+	}
+}
+
+/* Tablet */
+@media all and (max-width:800px){
+	.information div{
+		height:200px;
+		width:60%;
+	}
+	
+	.middleInformation{
+		margin:0;
+	}
+	
+	#googleMap{
+		height:400px;
+		width:95%;
+		margin:0;
+	}
+}
+
+/* Phone */
+@media all and (max-width:450px){
+	.information div{
+		height:auto;
+		width:100%;
+	}
+	
+	#googleMap{
+		height:350px;
+		width:95%;
+		margin:0;
+	}
+}

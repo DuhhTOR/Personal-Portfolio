@@ -1,5 +1,4 @@
-#ifndef MONITOR_H
-#define MONITOR_H
+#pragma once
 
 
 #include <string>
@@ -19,6 +18,3 @@ class Monitor {
 		std::string monitorResolution;
 		float monitorPrice;
 };
-
-
-#endif

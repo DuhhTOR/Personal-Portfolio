@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  line-height: 1.5;
+  font-family: "poppins", sans-serif;
+  color: #f0f0f0;
+}
+
+a {
+  color: #f0f0f0;
+  text-decoration: none;
+}
+
+#navbar {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 0;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  background: #be3144;
+}
+
+#navbar .nav-link {
+  padding: 20px;
+  background: #be3144;
+}
+
+#navbar .nav-link:hover {
+  background: #45567D;
+}
+
+#welcome-section {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #000000;
+  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#welcome-section h1 {
+  font-size: 4em;
+  margin: 0;
+}
+
+#welcome-section p {
+  margin: 0;
+  font-style: italic;
+  font-size: 3em;
+  color: #be3144;
+  text-shadow: #000000;
+}
+
+#projects {
+  height: 100vh;
+  background: #45567D;
+  text-align: center;
+}
+
+#projects h2 {
+  margin: 0;
+  padding: 10vh 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#projects #project-wrapper {
+  margin: 0 auto 6em auto;
+  padding: 0 25px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+#projects .project-tile {
+  width: 100%;
+}
+
+#projects .project-tile img {
+  height: 30vh;
+  max-width: 100%;
+}
+
+#projects .project-tile p {
+  background: #303841;
+}
+
+#projects .button {
+  padding: 10px 20px;
+  background: #303841;
+}
+
+#projects .button:hover {
+  background: #be3144;
+}
+
+#contact {
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #303841;
+}
+
+footer {
+  height: 10vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #303841;
+  border-top: solid 4.5px #be3144;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+/*# sourceMappingURL=styles.css.map */

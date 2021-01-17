@@ -1,0 +1,435 @@
+/* ================================================== COLOR PALET ================================================== *//*
+RGB 85, 85, 85			TUMŠI PELĒKA (Galvenā izvēlne)
+RGB 255, 255, 255		BALTA (Izvēlnes nosaukumi)
+RGB 249, 76, 97			GAIŠI SARKANA (Atvērtā lapa)
+*/
+
+
+/* ================================================== ALL ================================================== */
+html{
+	font-size:62.5%;
+}
+
+body{
+	padding:0px;
+	margin:0px;
+}
+
+/* ================================================== MENU ================================================== */
+nav{
+	color:rgb(255, 255, 255);
+	width:100%;
+	position:fixed;
+	top:0;
+	z-index:9;
+	font-family:"Arial", "Times New Roman";
+	user-select:none;
+	-moz-user-select:none;
+	-webkit-user-drag:none;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+}
+
+nav a{
+	text-decoration:none;
+	transition-duration:0.5s;
+}
+
+nav a:link, nav a:visited{
+	color:rgb(255, 255, 255);
+}
+
+nav a:hover{
+	color:rgb(249, 76, 97);
+}
+
+#logo{
+	height:40px;
+	width:10%;
+	float:left;
+	background-color:rgb(85, 85, 85);
+	text-align:center;
+}
+
+#logo img{
+	height:100%;
+	width:40px;
+	margin-left:auto;
+	margin-right:auto;
+	object-fit:cover;
+	user-select:none;
+	-moz-user-select:none;
+	-webkit-user-drag:none;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+}
+
+#mobileMenu{
+	display:none;
+}
+
+#menuWrapper{
+	height:40px;
+	width:90%;
+	display:flex;
+	background-color:rgb(85, 85, 85);
+	font-size:2.2rem;
+	font-weight:bold;
+}
+
+#menuWrapper div{
+	flex-basis:100%;
+	position:relative;
+}
+
+#menuWrapper a{
+	position:absolute;
+	top:50%;
+	-ms-transform:translateY(-50%);
+	transform:translateY(-50%);
+}
+
+.current{
+	color:rgb(249, 76, 97)!important;
+}
+
+#name{
+	width:10%;
+	display:inline-block;
+	background-color:rgb(85, 85, 85);
+	border-bottom-right-radius:10px;
+	text-align:center;
+	font-size:1.9rem;
+	cursor:default;
+}
+
+#language{
+	width:10%;
+	position:relative;
+	display:inline-block;
+	float:right;
+	border-bottom-left-radius:10px;
+	background-color:rgb(85, 85, 85);
+	text-align:center;
+	font-size:1.9rem;
+}
+
+#languageSelect{
+	border:none;
+	cursor:pointer;
+	background-color:rgb(85, 85, 85);
+	color:rgb(255, 255, 255);
+	font-size:1.9rem;
+}
+
+#lang{
+	display:none;
+	position:absolute;
+	right:0;
+	background-color:rgb(85, 85, 85);
+	z-index:1;
+}
+
+#lang a{
+	display:block;
+}
+
+#language:hover #lang{
+	display:block;
+	min-width:90px;
+}
+
+
+/* ================================================== WELCOME ================================================== */
+#welcome{
+	height:500px;
+	width:100%;
+	top:25px;
+	position:relative;
+	text-align:center;
+}
+
+#welcome img{
+	height:100%;
+	width:100%;
+	object-fit:cover;
+	user-select:none;
+	-moz-user-select:none;
+	-webkit-user-drag:none;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+}
+
+#welcome div{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	color:rgb(255, 255, 255);
+	font-family:"Times New Roman", "Arial";
+	font-size:9.6rem;
+	text-shadow:2px 2px rgb(85, 85, 85);
+	user-select:none;
+	-webkit-user-select:none;        
+	-moz-user-select:none;
+	-ms-user-select:none;
+	cursor:default;
+}
+
+
+/* ================================================== CONTENT ================================================== */
+#content{
+	width:100%;
+	padding:100px 0px 100px 0px;
+	text-align:center;
+	background:rgb(255, 255, 255);
+	color:rgb(0, 0, 0);
+	font-family:"Arial", "Times New Roman";
+	font-size:1.9rem;
+}
+
+#content div{
+	display:inline-block;
+	vertical-align:top;
+}
+
+#content div h6{
+	margin:20px 0px 0px 0px;
+	font-size:1.9rem;
+}
+
+#content div p{
+	text-align:left;
+	margin:16px 20px 16px 16px;
+}
+
+.sectionName{
+	height:50px;
+	width:100%;
+	margin:50px 0px 25px 0px;
+	border-top:2px solid rgba(85, 85, 85, 0.5);
+	border-bottom:2px solid rgba(85, 85, 85, 0.5);
+	line-height:50px;
+	background:rgba(85, 85, 85, 0.05);
+	user-select:none;
+	-webkit-user-select:none;        
+	-moz-user-select:none;
+	-ms-user-select:none;
+	cursor:default;
+}
+
+.sectionName span{
+	display:inline-block;
+	vertical-align:middle;
+	line-height:normal;
+}
+
+.redLine{
+	display:block;
+	margin:0;
+	color:rgb(249, 76, 97);
+	text-align:center;
+	clear:right;
+	user-select:none;
+	-webkit-user-select:none;        
+	-moz-user-select:none;
+	-ms-user-select:none;
+	cursor:default;
+}
+
+.more{
+	width:100%;
+}
+
+.moreButton{
+	padding:2.5px 2.5px 2.5px 2.5px;
+	border:1.5px solid rgb(85, 85, 85);
+	border-radius:5px;
+	background:rgb(255, 255, 255);
+	font-family:"Arial", "Times New Roman";
+	font-size:1.9rem;
+	cursor:pointer;
+}
+
+.moreButton:link, :visited{
+	text-decoration:none;
+	color:rgb(0, 0, 0);
+}
+
+.moreButton:hover{
+	transition-duration:0.5s;
+	background:rgb(85, 85, 85);
+	color:rgb(249, 76, 97);
+}
+
+
+/* ================================================== FOOTER ================================================== */
+footer{
+	background-color:rgb(85, 85, 85);
+	color:rgb(255, 255, 255);
+	text-align:center;
+	padding-top:50px;
+	padding-bottom:50px;
+	font-family:"Arial", "Times New Roman";
+	font-size:1.6rem;
+}
+
+footer div{
+	display:inline-block;
+	width:30%;
+	text-align:left;
+}
+
+footer h6{
+	margin:0;
+	font-size:1.6rem;
+	user-select:none;
+	-webkit-user-select:none;        
+	-moz-user-select:none;
+	-ms-user-select:none;
+	cursor:default;
+}
+
+.footerLine{
+	margin:0;
+	color:rgb(249, 76, 97);
+	user-select:none;
+	-webkit-user-select:none;        
+	-moz-user-select:none;
+	-ms-user-select:none;
+	cursor:default;
+}
+
+#workTimeFooter{
+	margin-right:40px;
+}
+
+
+/* ------------------------------------------------------------------------ Media Queries --------------------------------------------------------------------------*/
+
+/* Laptop */
+@media all and (max-width:1225px){
+	#welcome{
+		height:400px;
+	}
+}
+
+
+/* Menu */
+@media all and (max-width:1300px){
+	#name{
+		width:15%;
+	}
+	
+	#language{
+		width:15%;
+	}
+}
+
+/* Menu */
+@media all and (max-width:1000px){
+	#logo{
+		width:15%;
+	}
+	
+	#menuWrapper{
+		height:40px;
+		width:15%;
+		display:inline-block;
+		float:right;
+	}
+	
+	#menuWrapper div{
+		height:40px;
+		width:100vw;
+		display:none;
+		margin-left:-85vw;
+		border-bottom:1px rgb(249, 76, 97) solid;
+		background:rgb(85, 85, 85);
+	}
+
+	#menuWrapper a{
+		right:30%;
+	}
+
+	#mobileMenu{
+		float:right;
+		height:40px;
+		width:100%;
+		display:inline-block;
+		padding:0;
+		border:none;
+		background:rgb(85, 85, 85);
+	}
+	
+	#mobileMenu span{
+		height:5px;
+		width:35px;
+		display:block;
+		margin:5px auto 5px auto;
+		background-color:rgb(255, 255, 255);
+	}
+	
+	#menuWrapper:hover span{
+		background-color:rgb(249, 76, 97);
+		transition-duration:0.5s;
+	}
+	
+	#menuWrapper:hover div{
+		top:40px;
+		display:block;
+	}
+	
+	#name{
+		height:40px;
+		width:40%;
+		float:left;
+		border-bottom-right-radius:0;
+		line-height:40px;
+		text-align:left;
+	}
+	
+	#language{
+		height:40px;
+		width:30%;
+		float:left;
+		border-bottom-left-radius:0;
+		line-height:40px;
+		text-align:right;
+	}
+	
+	#lang{
+		text-align:center;
+	}
+}
+
+/* Tablet */
+@media all and (max-width:800px){
+	#welcome{
+		height:300px;
+	}
+	
+	#welcome div{
+		font-size:6.4rem;
+	}
+}
+
+/* Phone */
+@media all and (max-width:450px){
+	#welcome{
+		height:250px;
+	}
+	
+	#welcome div{
+		font-size:4.8rem;
+	}
+	
+	footer div{
+		width:90%;
+	}
+	
+	#workTimeFooter{
+		margin:0;
+		margin-bottom:25px;
+	}
+}

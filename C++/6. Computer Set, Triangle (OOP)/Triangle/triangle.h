@@ -1,5 +1,4 @@
-#ifndef TRIANGLE_H
-#define TRIANGLE_H
+#pragma once
 
 
 class Triangle {
@@ -14,6 +13,3 @@ class Triangle {
 	private:
 		float a, b, c;
 };
-
-
-#endif
