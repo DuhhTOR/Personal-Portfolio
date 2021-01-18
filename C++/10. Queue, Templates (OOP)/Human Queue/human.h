@@ -1,21 +1,16 @@
-#ifndef HUMAN_H
-#define HUMAN_H
+#pragma once
 
 
 #include<string>
-using namespace std;
 
 
-class Human{
+class Human {
 	public:
-		Human(string = "", float = 0.0, int = 0);
-		void PrintHuman() const;
+		Human(std::string = "", float = 0.0, int = 0);
+		const void printHuman() const;
 		
 	private:
-		string name;
+		std::string name;
 		float height;
 		int weight;
 };
-
-
-#endif

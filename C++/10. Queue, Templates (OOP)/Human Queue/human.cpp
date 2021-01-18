@@ -1,16 +1,15 @@
 #include<iostream>
 #include<string>
 #include "human.h"
-using namespace std;
 
 
-Human::Human(string n, float h, int w){
-	name = n;
-	height = h;
-	weight = w;
+Human::Human(std::string name, float height, int weight) {
+	this->name = name;
+	this->height = height;
+	this->weight = weight;
 }
 
 
-void Human::PrintHuman() const{
-	cout << "Vards = " << name << ", Garums = " << height << "m, Svars = " << weight << "kg." << endl;
+const void Human::printHuman() const {
+	std::cout << "Vards = " << this->name << ", Garums = " << this->height << "m, Svars = " << this->weight << "kg.\n";
 }

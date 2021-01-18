@@ -1,87 +1,83 @@
 #include <iostream>
 #include "queue.h"
-#include "queue.cpp"
-using namespace std;
 
 
-int main(){
-	Queue<int> in;
-	Queue<float> fl(10);
-	Queue<char> ch(15);
+int main() {
+	Queue<int> integerQueue(2);
+	Queue<float> floatQueue(10);
+	Queue<char> charQueue(15);
 	
 	
-	cout << "*----INT datu tipa elementu rinda----*" << endl;
+	std::cout << "*----INT datu tipa elementu rinda----*\n";
 	
-	for(int i = 0; i < 4; i++){
-		in.enqueue(i);
-	}
+	integerQueue.enqueue(2);
 	
-	cout << "Elementu rinda" << endl;
-	in.PrintQueue();
-	cout << "\n//Pievienojam elementu rindai//" << endl;
-	in.enqueue(7);
-	in.PrintQueue();
-	cout << "\n//Meginam pievienot vel 1 elementu rindai//" << endl;
-	in.enqueue();
-	in.PrintQueue();
-	cout << "\n//Iznemam elementu no rindas//" << endl;
-	in.dequeue();
-	in.PrintQueue();
-	cout << "\n//Pievienojam elementu rindai//" << endl;
-	in.enqueue(89);
-	in.PrintQueue();
-	cout << endl << endl;
+	std::cout << "Elementu rinda\n";
+	integerQueue.printQueue();
+	std::cout << "\n//Pievienojam elementu rindai//\n";
+	integerQueue.enqueue(7);
+	integerQueue.printQueue();
+	std::cout << "\n//Meginam pievienot vel 1 elementu rindai//\n";
+	integerQueue.enqueue();
+	integerQueue.printQueue();
+	std::cout << "\n//Iznemam elementu no rindas//\n";
+	integerQueue.dequeue();
+	integerQueue.printQueue();
+	std::cout << "\n//Pievienojam elementu rindai//\n";
+	integerQueue.enqueue(89);
+	integerQueue.printQueue();
+	std::cout << "\n\n";
 	system("pause");
 	system("cls");
 	
 	
-	cout << "*----FLOAT datu tipa elementu rinda----*" << endl;
+	std::cout << "*----FLOAT datu tipa elementu rinda----*\n";
 	
-	for(int i = 1; i < 9; i++){
-		fl.enqueue(i * 0.67);
+	for (int i = 1; i < 9; i++) {
+		floatQueue.enqueue(i * 0.67);
 	}
 	
-	cout << "Elementu rinda" << endl;
-	fl.PrintQueue();
-	cout << "\n//Pievienojam 2 elementus rindai//" << endl;
-	fl.enqueue(9.99);
-	fl.enqueue(6.9);
-	fl.PrintQueue();
-	cout << "\n//Meginam pievienot vel 1 elementu rindai//" << endl;
-	fl.enqueue();
-	fl.PrintQueue();
-	cout << "\n//Iznemam 3 elementus no rindas//" << endl;
-	fl.dequeue();
-	fl.dequeue();
-	fl.dequeue();
-	fl.PrintQueue();
-	cout << "\n//Pievienojam elementu rindai" << endl;
-	fl.enqueue(189.33);
-	fl.PrintQueue();
-	cout << endl << endl;
+	std::cout << "Elementu rinda\n";
+	floatQueue.printQueue();
+	std::cout << "\n//Pievienojam 2 elementus rindai//\n";
+	floatQueue.enqueue(9.99);
+	floatQueue.enqueue(6.9);
+	floatQueue.printQueue();
+	std::cout << "\n//Meginam pievienot vel 1 elementu rindai//\n";
+	floatQueue.enqueue();
+	floatQueue.printQueue();
+	std::cout << "\n//Iznemam 3 elementus no rindas//\n";
+	floatQueue.dequeue();
+	floatQueue.dequeue();
+	floatQueue.dequeue();
+	floatQueue.printQueue();
+	std::cout << "\n//Pievienojam elementu rindai\n";
+	floatQueue.enqueue(189.33);
+	floatQueue.printQueue();
+	std::cout << "\n\n";
 	system("pause");
 	system("cls");
 	
 	
-	cout << "*----CHAR datu tipa elementu rinda----*" << endl;
+	std::cout << "*----CHAR datu tipa elementu rinda----*\n";
 	
-	for(int i = 97, j = 0; j < 15; i++, j++){
-		ch.enqueue(i);
+	for (int i = 97, j = 0; j < 15; i++, j++) {
+		charQueue.enqueue(i);
 	}
 	
-	ch.PrintQueue();
-	cout << "\n//Meginam pievienot vel 1 elementu rindai//" << endl;
-	ch.enqueue();
-	ch.PrintQueue();
-	cout << "\n//Iznemam 2 elementus no rindas//" << endl;
-	ch.dequeue();
-	ch.dequeue();
-	ch.PrintQueue();
-	cout << "\n//Pievienojam 2 lementus rindai//" << endl;
-	ch.enqueue('$');
-	ch.enqueue('&');
-	ch.PrintQueue();
-	cout << endl << endl;
+	charQueue.printQueue();
+	std::cout << "\n//Meginam pievienot vel 1 elementu rindai//\n";
+	charQueue.enqueue();
+	charQueue.printQueue();
+	std::cout << "\n//Iznemam 2 elementus no rindas//\n";
+	charQueue.dequeue();
+	charQueue.dequeue();
+	charQueue.printQueue();
+	std::cout << "\n//Pievienojam 2 lementus rindai//\n";
+	charQueue.enqueue('$');
+	charQueue.enqueue('&');
+	charQueue.printQueue();
+	std::cout << "\n\n";
 	
 	
 	system("pause");
