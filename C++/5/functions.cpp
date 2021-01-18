@@ -4,25 +4,26 @@
 #include <cstring>
 #include <string>
 #include "functions.h"
-using namespace std;
 
-fstream dat_a;
-fstream dat_a_copy;
-fstream temp;
 
-struct clientdat_a{
+std::fstream data;
+std::fstream datacopy;
+std::fstream temp;
+
+
+struct clientdata {
 	int accountNumber;
-	string Surname;
-	string Name;
+	std::string Surname;
+	std::string Name;
 	float balance;
 };
 
 
 /* ------------------------------------------------------------- Pievienot ierakstu --------------------------------------------------------------- */
-void add_entry(){
+void addEntry(){
 	bool fail = false, found = false, input = false;
 	string line, number;
-	clientdat_a client;
+	clientdata client;
 	
 	
 	// Ievade un ievades korektuma parbaude
@@ -39,16 +40,16 @@ void add_entry(){
 			
 		number = to_string(client.accountNumber);
 			
-		dat_a.open("dat_a.txt", ios::in);
+		data.open("dat_a.txt", ios::in);
 				
 		if(cin.fail()){
-			dat_a.close();
+			data.close();
 			cout << "Nepareiza ievade!\n";
 			continue;}
 		
 		else{
-			if(dat_a.is_open()){
-				while(getline(dat_a, line)){
+			if(data.is_open()){
+				while(getline(data, line)){
 					if(line.find(number + ".") != string::npos){
 						found = true;
 						cout << "Konta numurs jau tiek izmantots datubaze!\n";
@@ -58,7 +59,7 @@ void add_entry(){
 			else{
 				return;}
 				
-			dat_a.close();
+			data.close();
 		}
 		
 		if(cin.fail() == false && found == false){
@@ -82,25 +83,25 @@ void add_entry(){
 	while(cin.fail());
 	
 	
-	dat_a.close();
-	dat_a.open("dat_a.txt", ios::out | ios::app);
+	data.close();
+	data.open("dat_a.txt", ios::out | ios::app);
 	
 	
 	// Rakstisana faila
-	if(dat_a.is_open()){
-		dat_a << client.accountNumber << ". " << client.Surname << " " << client.Name << " " << client.balance << endl;
+	if(data.is_open()){
+		data << client.accountNumber << ". " << client.Surname << " " << client.Name << " " << client.balance << endl;
 		
-		if(dat_a.good()){
+		if(data.good()){
 			fail = false;}
 		
 		else{
 			fail = true;}
 		
-		dat_a.close();
+		data.close();
 	}
 	
 	else{
-		dat_a.close();
+		data.close();
 		cout << "\nNeizdevas atvert datubazi!\n";
 		system("Pause");
 		return;}
@@ -120,7 +121,7 @@ void add_entry(){
 
 
 /* --------------------------------------------------------------- Dzest ierakstu ----------------------------------------------------------------- */
-void remove_entry(){
+void removeEntry(){
 	bool fail = false, found = false;
 	string line, number;
 	
@@ -130,12 +131,12 @@ void remove_entry(){
 		
 		number += ".";
 		
-		dat_a.open("dat_a.txt", ios::in);
+		data.open("dat_a.txt", ios::in);
 		temp.open("temp.txt", ios::out);
 		
-		if(dat_a.is_open() && temp.is_open()){
-			while(getline(dat_a, line)){
-				if(dat_a.good()){
+		if(data.is_open() && temp.is_open()){
+			while(getline(data, line)){
+				if(data.good()){
 					if(found == false){
 						if(line.find(number) != string::npos){
 							found = true;
@@ -154,14 +155,14 @@ void remove_entry(){
 					fail = true;
 					break;}
 			}
-			dat_a.close();
+			data.close();
 			temp.close();
 			remove("dat_a.txt");
 			rename("temp.txt", "dat_a.txt");
 		}
 		
 		else{
-			dat_a.close();
+			data.close();
 			temp.close();
 			cout << "\nNeizdevas atvert datubazi!\n";
 			system("Pause");
@@ -186,41 +187,45 @@ void remove_entry(){
 
 
 /* ------------------------------------------------------------ Izvadit visus ierakstus ----------------------------------------------------------- */
-void print_all(){
+void printAll() {
 	bool fail = false;
-	string text;
+	std::string textLine;
 	
 	
 	system("cls");
 	
 	
-	dat_a.open("dat_a.txt", ios::in);
+	data.open("dat_a.txt", std::ios::in);
 	
 	
-	if(dat_a.is_open()){
-		while(getline(dat_a, text)){
-			if(dat_a.good()){
-		    	cout << text << endl;
-				continue;}
+	if (data.is_open()) {
+		while (getline(data, textLine)) {
+			if (data.good()) {
+				std::cout << textLine << "\n";
+				continue;
+			}
 			
-			else{
+			else {
 				fail = true;
-				break;}
+				break;
+			}
 		}
-		dat_a.close();
+		data.close();
 	}
 	
-	else{
-		dat_a.close();
-		cout << "\nNeizdevas atvert datubazi!\n";
+	else {
+		data.close();
+		std::cout << "\nNeizdevas atvert datubazi!\n";
 		system("Pause");
-		return;}
+		return;
+	}
 	
 	
-	if(fail == true){
-		cout << "\nRadas problemas lasto datubazi!\n";
+	if (fail == true) {
+		std::cout << "\nRadas problemas lasto datubazi!\n";
 		system("Pause");
-		return;}
+		return;
+	}
 	
 	
 	system("Pause");
@@ -228,20 +233,20 @@ void print_all(){
 
 
 /* ---------------------------------------------------------------- Atrast ierakstu --------------------------------------------------------------- */
-void find_entry(){
+void findEntry(){
 	bool fail = false, found = false;
-	string line, number;
+	std::string line, number;
 	
-	do{
+	do {
 		cout << "\nIevadiet konta numuru: "; cin >> number;
 		
 		number += ".";
 		
-		dat_a.open("dat_a.txt", ios::in);
+		data.open("dat_a.txt", ios::in);
 		
-		if(dat_a.is_open()){
-			while(getline(dat_a, line)){
-				if(dat_a.good()){
+		if(data.is_open()){
+			while(getline(data, line)){
+				if(data.good()){
 					if(line.find(number) != string::npos){
 						cout << line << endl;
 						found = true;
@@ -251,11 +256,11 @@ void find_entry(){
 					fail = true;
 					break;}
 			}
-			dat_a.close();
+			data.close();
 		}
 		
 		else{
-			dat_a.close();
+			data.close();
 			cout << "\nNeizdevas atvert datubazi!\n";
 			system("Pause");
 			return;}
@@ -276,7 +281,7 @@ void find_entry(){
 
 
 /* -------------------------------------------------------- Izmainit konta balansu ---------------------------------------------------------------- */
-void change_balance(){
+void changeBalance() {
 	bool fail = false, found = false;
 	float change, balance;
 	int index;
@@ -288,12 +293,12 @@ void change_balance(){
 		
 		number += ".";
 		
-		dat_a.open("dat_a.txt", ios::in);
+		data.open("dat_a.txt", ios::in);
 		temp.open("temp.txt", ios::out);
 		
-		if(dat_a.is_open()){
-			while(getline(dat_a, line)){
-				if(dat_a.good()){
+		if(data.is_open()){
+			while(getline(data, line)){
+				if(data.good()){
 					if(found == false){
 						if(line.find(number) != string::npos){
 							found = true;
@@ -303,7 +308,7 @@ void change_balance(){
 				
 				else{
 					fail = true;
-					dat_a.close();
+					data.close();
 					break;}
 				
 				temp << line << endl;
@@ -315,14 +320,14 @@ void change_balance(){
 					fail = true;
 					break;}
 			}
-			dat_a.close();
+			data.close();
 			temp.close();
 			remove("dat_a.txt");
 			rename("temp.txt", "dat_a.txt");
 		}
 		
 		else{
-			dat_a.close();
+			data.close();
 			temp.close();
 			cout << "\nNeizdevas atvert datubazi!\n";
 			system("Pause");
@@ -365,22 +370,22 @@ void change_balance(){
 	new_line += number_in_file;
 	
 	
-	dat_a.open("dat_a.txt", ios::out | ios::app);
+	data.open("dat_a.txt", ios::out | ios::app);
 	
 	
-	if(dat_a.is_open()){
-		dat_a << new_line << endl;
+	if(data.is_open()){
+		data << new_line << endl;
 		
-		if(dat_a.good()){
+		if(data.good()){
 			fail = false;}
 		
 		else{
 			fail = true;};
 		
-		dat_a.close();}
+		data.close();}
 		
 	else{
-		dat_a.close();
+		data.close();
 		cout << "\nNeizdevas atvert datubazi!\n";
 		system("Pause");
 		return;}
@@ -399,7 +404,7 @@ void change_balance(){
 
 
 /* ---------------------------------------------------------- Izvadit paradniekus ----------------------------------------------------------------- */
-void deptors(){
+void printDeptors() {
 	bool fail = false, found = false;
 	string line;
 	
@@ -407,12 +412,12 @@ void deptors(){
 	system("cls");
 	
 	
-	dat_a.open("dat_a.txt", ios::in);
+	data.open("dat_a.txt", ios::in);
 	
 	
-	if(dat_a.is_open()){
-		while(getline(dat_a, line)){
-			if(dat_a.good()){
+	if(data.is_open()){
+		while(getline(data, line)){
+			if(data.good()){
 				if(line.find("-") != string::npos){
 					found = true;
 					cout << line << endl;};}
@@ -421,11 +426,11 @@ void deptors(){
 				fail = true;
 				break;}
 		}
-		dat_a.close();
+		data.close();
 	}
 	
 	else{
-		dat_a.close();
+		data.close();
 		cout << "Neizdevas atvert datubazi!\n";
 		system("Pause");
 		return;}
@@ -445,41 +450,46 @@ void deptors(){
 
 
 /* -------------------------------------------------------- Izvadit esoso ierakstu skaitu --------------------------------------------------------- */
-void count_entries(){
+void countEntries() {
 	bool fail = false;
 	int entries = 0;
-	string line;
+	std::string line;
 	
 	
-	dat_a.open("dat_a.txt", ios::in);
+	data.open("data.txt", std::ios::in);
 	
 	
-	if(dat_a.is_open()){
-		while(getline(dat_a, line)){
-			if(dat_a.good()){
-				entries++;}
+	if (data.is_open()) {
+		while (getline(data, line)) {
+			if (data.good()) {
+				entries++;
+			}
 			
-			else{
+			else {
 				fail = true;
-				break;}
+				break;
+			}
 		}
-		dat_a.close();
+		data.close();
 	}
 	
-	else{
-		dat_a.close();
-		cout << "\nNeizdevas atvert datubazi!\n";
+	else {
+		data.close();
+		std::cout << "\nNeizdevas atvert datubazi!\n";
 		system("Pause");
-		return;}
+		return;
+	}
 	
 	
-	if(fail == true){
-		cout << "/nRadas problemas lasto datubazi!\n";
+	if (fail == true) {
+		std::cout << "/nRadas problemas lasto datubazi!\n";
 		system("Pause");
-		return;}
+		return;
+	}
 	
-	else{
-		cout << "\nDatu baze ir " << entries << " ieraksti.\n";}
+	else {
+		std::cout << "\nDatu baze ir " << entries << " ieraksti.\n";
+	}
 	
 	
 	system("Pause");
@@ -487,50 +497,56 @@ void count_entries(){
 
 
 /* ------------------------------------------------------ Izveidot datu bazes kopiju -------------------------------------------------------------- */
-void make_copy(){
+void makeCopy() {
 	bool fail = false;
-	string line;
+	std::string textLine;
 	
 	
-	dat_a.open("dat_a.txt", ios::in);
-	dat_a_copy.open("dat_a_copy.txt", ios::out);
+	data.open("data.txt", std::ios::in);
+	datacopy.open("datacopy.txt", std::ios::out);
 	
 	
-	if(dat_a.is_open() && dat_a_copy.is_open()){
-		while(getline(dat_a, line)){
-			if(dat_a.good()){
-		    	dat_a_copy << line << endl;}
+	if (data.is_open() && datacopy.is_open()) {
+		while (getline(data, textLine)) {
+			if (data.good()) {
+		    	datacopy << textLine << "\n";
+			}
 		    
-		    else{
+		    else {
 				fail = true;
-				break;}
+				break;
+			}
 		    
-		    if(dat_a_copy.good()){
-				continue;}
+		    if (datacopy.good()) {
+				continue;
+			}
 			
-			else{
+			else {
 				fail = true;
-				break;}
+				break;
+			}
 		}
-		dat_a.close();
-		dat_a_copy.close();
+		data.close();
+		datacopy.close();
 	}
 	
-	else{
-		dat_a.close();
-		dat_a_copy.close();
-		cout << "\nNeizdevas atvert datubazi!\n";
+	else {
+		data.close();
+		datacopy.close();
+		std::cout << "\nNeizdevas atvert datubazi!\n";
 		system("Pause");
 		return;}
 	
 	
-	if(fail == true){
-		cout << "/nRadas problemas lasto/rakstot datubazi!\n";
+	if (fail == true) {
+		std::cout << "/nRadas problemas lasot/rakstot datubazi!\n";
 		system("Pause");
-		return;}
+		return;
+	}
 	
-	else{
-		cout << "\nDatu bazes kopija izveidota.\n";}
+	else {
+		std::cout << "\nDatu bazes kopija izveidota.\n";
+	}
 	
 	
 	system("Pause");

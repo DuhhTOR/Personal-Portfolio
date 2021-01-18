@@ -7,10 +7,7 @@
 class DayET : public ElectronicTicket {
 	public:
 		DayET(int = 0);
-		void setDayET(int);
-		int getActivationDate() const;
-		bool getActivationStatus() const;
-		void print() const;
+		const void print() const;
 		void use();
 		void add(int) {};
 		

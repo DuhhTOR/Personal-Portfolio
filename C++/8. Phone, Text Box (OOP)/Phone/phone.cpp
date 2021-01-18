@@ -3,20 +3,15 @@
 
 
 Phone::Phone(int weight) {
-	this->setPhone(weight);
-}
-
-
-void Phone::setPhone(int weight) {
 	this->weight = weight;
 }
 
 
-int Phone::getWeight() const {
+const int Phone::getWeight() const {
 	return this->weight;
 }
 
 
-void Phone::printPhone() const {
-	std::cout << "Svars = " << this->getWeight() << "g\n";
+const void Phone::printPhone() const {
+	std::cout << "Svars = " << this->weight << "g\n";
 }

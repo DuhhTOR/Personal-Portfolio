@@ -7,11 +7,6 @@
 
 
 DayET::DayET(int activationDate) {
-	this->setDayET(activationDate);
-}
-
-
-void DayET::setDayET(int activationDate) {
 	if (activationDate > 0) {
 		this->activationDate = activationDate;
 		this->activationStatus = true;
@@ -24,19 +19,9 @@ void DayET::setDayET(int activationDate) {
 }
 
 
-int DayET::getActivationDate() const{
-	return this->activationDate;
-}
-
-
-bool DayET::getActivationStatus() const{
-	return activationStatus;
-}
-
-
-void DayET::print() const {
-	if (activationStatus == true) {
-		std::cout << "Aktivizets: ja, Aktivizacijas datums: " << activationDate << "\n";
+const void DayET::print() const {
+	if (this->activationStatus == true) {
+		std::cout << "Aktivizets: ja, Aktivizacijas datums: " << this->activationDate << "\n";
 	}
 	
 	else {
@@ -49,15 +34,15 @@ void DayET::use() {
 	time_t t = time(NULL);
 	tm* date = localtime(&t);
 	
-	if (activationStatus == false) {
-		activationStatus = true;
-		activationDate = date->tm_mday;
+	if (this->activationStatus == false) {
+		this->activationStatus = true;
+		this->activationDate = date->tm_mday;
 	}
 	
 	else {
 		std::cout << "E-Talona deriguma statuss: ";
 		
-		if (date->tm_mday - activationDate > 1 || date->tm_mday - activationDate < -1) {
+		if ((date->tm_mday - this->activationDate > 1) || (date->tm_mday - this->activationDate < -1)) {
 			std::cout << "sarkans\n";
 		}
 		

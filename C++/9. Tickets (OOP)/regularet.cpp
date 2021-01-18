@@ -3,22 +3,12 @@
 
 
 RegularET::RegularET(int amountOfTrips) {
-	this->setRegularET(amountOfTrips);
-}
-
-
-void RegularET::setRegularET(int amountOfTrips) {
 	this->amountOfTrips = amountOfTrips;
 }
 
 
-int RegularET::getAmountOfTrips() const {
-	return this->amountOfTrips;
-}
-
-
-void RegularET::print() const {
-	std::cout << "Braucienu skaits: " << this->getAmountOfTrips() << "\n";
+const void RegularET::print() const {
+	std::cout << "Braucienu skaits: " << this->amountOfTrips << "\n";
 }
 
 

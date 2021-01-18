@@ -6,7 +6,7 @@ TextBox::TextBox(std::string font, std::string fontColor, std::string textLine, 
 }
 
 
-void TextBox::printTextBox() const {
+const void TextBox::printTextBox() const {
 	Text::printText();
 	Box::printBox();
 }
