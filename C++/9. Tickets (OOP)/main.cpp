@@ -1,100 +1,107 @@
 #include <iostream>
-#include "etalons.h"
-#include "diennaktset.h"
-#include "braucienusket.h"
-#include "personiskaiset.h"
-using namespace std;
+#include "electronicticket.h"
+#include "dayet.h"
+#include "regularet.h"
+#include "personalet.h"
 
 
-int main(){
-	DiennaktsET d;
-	DiennaktsET dd(23);
-	BraucienuskET b(1);
-	BraucienuskET bb(10);
-	PersoniskaisET p(1, "Janis", "Legzdins");
-	PersoniskaisET pp(7, "Peteris", "Ozols");
-	ETalons *ET[6] = {&d, &dd, &b, &bb, &p, &pp};
+int main() {
+	DayET firstDayET;
+	DayET secondDayET(23);
+	RegularET firstRegularET(1);
+	RegularET secondRegularET(10);
+	PersonalET firstPersonalET(1, "Janis", "Legzdins");
+	PersonalET secondPersonalET(7, "Peteris", "Ozols");
+	ElectronicTicket *ET[6] = {&firstDayET, &secondDayET, &firstRegularET, &secondRegularET, &firstPersonalET, &secondPersonalET};
 	
 	
 	// Visu E-Talonu izvade //
-	for(int i = 0; i < 6; i++){
-		if(i == 0 || i == 1){
-			if(i == 0){
-				cout << "1. ";}
+	for (int i = 0; i < 6; i++) {
+		if (i == 0 || i == 1) {
+			if (i == 0) {
+				std::cout << "1. ";
+			}
 			
-			else{
-				cout << "2. ";}
-			
-			cout << "DiennaktsET" << endl;
+			else {
+				std::cout << "2. ";
+			}
+
+			std::cout << "Diennakts E-talons\n";
 		}
 		
-		if(i == 2 || i == 3){
-			if(i == 2){
-				cout << "1. ";}
+		else if (i == 2 || i == 3) {
+			if (i == 2) {
+				std::cout << "1. ";
+			}
 			
-			else{
-				cout << "2. ";}
+			else {
+				std::cout << "2. ";
+			}
 				
-			cout << "BraucienuskET" << endl;
+			std::cout << "Parastais E-talons\n";
 		}
 		
-		if(i == 4 || i == 5){
-			if(i == 4){
-				cout << "1. ";}
+		else if (i == 4 || i == 5) {
+			if (i == 4) {
+				std::cout << "1. ";
+			}
 			
-			else{
-				cout << "2. ";}
+			else {
+				std::cout << "2. ";
+			}
 			
-			cout << "PersoniskaisET" << endl;
+			std::cout << "Personiskais E-talons\n";
 		}
 		
-		ET[i]->Print();
+		ET[i]->print();
 		
-		if(i == 1 || i == 3){
-			cout << endl;}
+		if (i == 1 || i == 3) {
+			std::cout << "\n";
+		}
 	}
-	cout << endl << endl;
+
+	std::cout << "\n\n";
 	system("pause");
 	system("cls");
 	
 	
 	// E-Talonu funkciju "Use()", "Add()" parbaude //
-	cout << "1. DiennaktsET" << endl;
-	d.Print();
-	cout << "//Izmantojam//" << endl;
-	d.Use();
-	d.Print();
-	cout << "//Izmantojam//" << endl;
-	d.Use();
-	cout << "2. DiennaktsET" << endl;
-	dd.Print();
-	cout << "//Izmantojam//" << endl;
-	dd.Use();
-	cout << endl << endl;
+	std::cout << "1. Diennakts E-talons\n";
+	firstDayET.print();
+	std::cout << "//Izmantojam//\n";
+	firstDayET.use();
+	firstDayET.print();
+	std::cout << "//Izmantojam//\n";
+	firstDayET.use();
+	std::cout << "2. Diennakts E-talons\n";
+	secondDayET.print();
+	std::cout << "//Izmantojam//\n";
+	secondDayET.use();
+	std::cout << "\n";
 	
-	cout << "1. BraucienuskET" << endl;
-	b.Print();
-	cout << "//Izmantojam//" << endl;
-	b.Use();
-	b.Print();
-	cout << "//Izmantojam//" << endl;
-	b.Use();
-	cout << endl << endl;
+	std::cout << "1. Parastais E-talons\n";
+	firstRegularET.print();
+	std::cout << "//Izmantojam//\n";
+	firstRegularET.use();
+	firstRegularET.print();
+	std::cout << "//Izmantojam//\n";
+	firstRegularET.use();
+	std::cout << "\n";
 	
-	cout << "1. PersoniskaisET" << endl;
-	p.Print();
-	cout << "//Izmantojam//" << endl;
-	p.Use();
-	p.Print();
-	cout << "//Izmantojam//" << endl;
-	p.Use();
-	cout << "//Pievienojam 2 braucienus//" << endl;
-	p.Add(2);
-	p.Print();
-	cout << "//Izmantojam//" << endl;
-	p.Use();
-	p.Print();
-	cout << endl << endl;
+	std::cout << "1. Personiskais E-talons\n";
+	firstPersonalET.print();
+	std::cout << "//Izmantojam//\n";
+	firstPersonalET.use();
+	firstPersonalET.print();
+	std::cout << "//Izmantojam//\n";
+	firstPersonalET.use();
+	std::cout << "//Pievienojam 2 braucienus//\n";
+	firstPersonalET.add(2);
+	firstPersonalET.print();
+	std::cout << "//Izmantojam//\n";
+	firstPersonalET.use();
+	firstPersonalET.print();
+	std::cout << "\n\n";
 	
 	
 	system("pause");
