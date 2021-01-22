@@ -1,0 +1,10 @@
+EN
+check-time-format: program, that checks if the time and the format the user inputs is correct. The correct format is hh:mm:ss. Examples – 23:09:03, outputs correct; 2:2:2, 14.05.35, qw2:we34, outputs incorrect format, 12:02:94, outputs incorrect time.
+
+word-guessing-game: game, where the user guesses words from an array one letter at a time and receives scoring for it. The rules: the word is chosen randomly from the array; the number of letters is shown on screen with a symbol, for example, *; if the guessed letter is correct, the symbol is changed to the letter (if a word has multiple identical letters, all of the symbols in the word are changed to the correctly guessed letter); the input must happen without pressing ‘Enter’ on the keyboard (real-time); for an incorrectly guessed letter, the user receives 1 penalty point; after a correctly guessed word, 5 penalty points are removed; the game continues until the user gets 10 penalty points or user choses to end game; at the end, outputs the amount of words correctly guessed or a congratulations on correctly guessing every word.
+
+
+LV
+check-time-format:  programma, kas pārbauda, vai ievadītais laiks un formāts ir korekts. Korektais formāts ir hh:mm:ss. Piemēri - 23:09:03, izvada pareizi; 2:2:2, 14.05.35, qw2:we34, izvada nepareizs formāts, 12:02:94, izvada nepareizs laiks.
+
+word-guessing-game: spēle, kur lietotājs min vārdus no vārdu masīva izmantojot burtus un saņem novērtējumu par to. Noteikumi: vārds tiek izvēlēts nejauši; burtu skaits tiek atspoguļots uz ekrāna izmantojot simbolus, piemēram, *; ja minētais burts ir pareizs, simbols tiek aizvietots ar burtu (ja vairāki burti ir identiski vārdā, visi simboli tiek aizvietoti ar burtu); ievadei jānotiek nenospiežot ‘Enter’ (reāllaika ievade); par katru nepareizo burtu, lietotājs saņem 1 soda punktu; pēc pareizi uzminēta vārda, tiek noņemti 5 soda punkti; spēle turpinās kamēr lietotājs nav sasniedzis 10 soda punktus vai neizvēlās beigt spēli; spēles beigās, tiek izvadīts pareizi uzminēto vārdu skaits vai apsveikums, ja visi vārdi tikuši uzminēti pareizi.
