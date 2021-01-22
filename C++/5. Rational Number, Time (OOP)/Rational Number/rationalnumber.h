@@ -9,17 +9,17 @@ class RationalNumber {
 		RationalNumber(int = 1, int = 1);
 		void reduceFraction();
 		const int findGreatestCommonDivisor(int, int) const;
-		const RationalNumber operator+(RationalNumber &);
-		const RationalNumber operator-(RationalNumber &);
+		const RationalNumber operator+(const RationalNumber &) const;
+		const RationalNumber operator-(const RationalNumber &) const;
 		const RationalNumber operator*(const RationalNumber &) const;
 		const RationalNumber operator/(const RationalNumber &) const;
 		RationalNumber & operator=(const RationalNumber &);
-		bool operator==(const RationalNumber &) const;
-		bool operator!=(const RationalNumber &) const;
-		bool operator>(const RationalNumber &) const;
-		bool operator<(const RationalNumber &) const;
-		bool operator>=(const RationalNumber &) const;
-		bool operator<=(const RationalNumber &) const;
+		const bool operator==(const RationalNumber &) const;
+		const bool operator!=(const RationalNumber &) const;
+		const bool operator>(const RationalNumber &) const;
+		const bool operator<(const RationalNumber &) const;
+		const bool operator>=(const RationalNumber &) const;
+		const bool operator<=(const RationalNumber &) const;
 		
 	private:
 		int numerator, denominator;

@@ -71,7 +71,7 @@ const int RationalNumber::findGreatestCommonDivisor(int firstNumber, int secondN
 }
 
 
-const RationalNumber RationalNumber::operator+(RationalNumber &secondObject) {
+const RationalNumber RationalNumber::operator+(const RationalNumber &secondObject) const {
 	RationalNumber objectCopy = *this;
 	
 
@@ -84,7 +84,7 @@ const RationalNumber RationalNumber::operator+(RationalNumber &secondObject) {
 }
 
 
-const RationalNumber RationalNumber::operator-(RationalNumber &secondObject) {
+const RationalNumber RationalNumber::operator-(const RationalNumber &secondObject) const {
 	RationalNumber objectCopy = *this;
 	
 
@@ -129,7 +129,7 @@ RationalNumber & RationalNumber::operator=(const RationalNumber &secondObject) {
 }
 
 
-bool RationalNumber::operator==(const RationalNumber &secondObject) const {
+const bool RationalNumber::operator==(const RationalNumber &secondObject) const {
 	if ((this->numerator == secondObject.numerator) && (this->denominator == secondObject.denominator)) {
 		return true;
 	}
@@ -140,12 +140,12 @@ bool RationalNumber::operator==(const RationalNumber &secondObject) const {
 }
 
 
-bool RationalNumber::operator!=(const RationalNumber &secondObject) const {
+const bool RationalNumber::operator!=(const RationalNumber &secondObject) const {
 	return !(*this == secondObject);
 }
 
 
-bool RationalNumber::operator>(const RationalNumber &secondObject) const {
+const bool RationalNumber::operator>(const RationalNumber &secondObject) const {
 	if ((float)this->numerator / (float)this->denominator > (float)secondObject.numerator / (float)secondObject.denominator) {
 		return true;
 	}
@@ -156,7 +156,7 @@ bool RationalNumber::operator>(const RationalNumber &secondObject) const {
 }
 
 
-bool RationalNumber::operator<(const RationalNumber &secondObject) const {
+const bool RationalNumber::operator<(const RationalNumber &secondObject) const {
 	if ((float)this->numerator / (float)this->denominator < (float)secondObject.numerator / (float)secondObject.denominator) {
 		return true;
 	}
@@ -167,7 +167,7 @@ bool RationalNumber::operator<(const RationalNumber &secondObject) const {
 }
 
 
-bool RationalNumber::operator>=(const RationalNumber &secondObject) const {
+const bool RationalNumber::operator>=(const RationalNumber &secondObject) const {
 	if (*this == secondObject) {
 		return true;
 	}
@@ -182,7 +182,7 @@ bool RationalNumber::operator>=(const RationalNumber &secondObject) const {
 }
 
 
-bool RationalNumber::operator<=(const RationalNumber &secondObject) const {
+const bool RationalNumber::operator<=(const RationalNumber &secondObject) const {
 	if (*this == secondObject) {
 		return true;
 	}
