@@ -8,16 +8,16 @@ class Time {
 	public:
 		Time(int = 0, int = 0, int = 0);
 		Time & operator=(const Time &);
-		Time operator++();					//	++x
+		Time& operator++();					//	++x
 		Time operator++(int);				//	x++
-		Time operator--();					//	--x
+		Time& operator--();					//	--x
 		Time operator--(int);				//	x--
-		bool operator>(const Time &) const;
-		bool operator<(const Time &) const;
-		bool operator>=(const Time &) const;
-		bool operator<=(const Time &) const;
-		bool operator==(const Time &) const;
-		bool operator!=(const Time &) const;
+		const bool operator>(const Time &) const;
+		const bool operator<(const Time &) const;
+		const bool operator>=(const Time &) const;
+		const bool operator<=(const Time &) const;
+		const bool operator==(const Time &) const;
+		const bool operator!=(const Time &) const;
 		
 		
 	private:
