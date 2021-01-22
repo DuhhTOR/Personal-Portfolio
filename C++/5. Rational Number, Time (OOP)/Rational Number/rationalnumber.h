@@ -1,12 +1,14 @@
+#pragma once
+
+
 class RationalNumber {
 	friend std::ostream & operator<<(std::ostream &, const RationalNumber &);
 	friend std::istream & operator>>(std::istream &, RationalNumber &);
 	
 	public:
 		RationalNumber(int = 1, int = 1);
-		void setRationalNumber(int, int);
-		void lowest();
-		int gcd(int, int);
+		void reduceFraction();
+		const int findGreatestCommonDivisor(int, int) const;
 		const RationalNumber operator+(RationalNumber &);
 		const RationalNumber operator-(RationalNumber &);
 		const RationalNumber operator*(const RationalNumber &) const;
@@ -20,5 +22,5 @@ class RationalNumber {
 		bool operator<=(const RationalNumber &) const;
 		
 	private:
-		int x, y;
+		int numerator, denominator;
 };

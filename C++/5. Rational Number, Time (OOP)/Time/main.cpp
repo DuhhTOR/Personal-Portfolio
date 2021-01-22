@@ -2,7 +2,7 @@
 #include "time.h"
 
 
-int main(){
+int main() {
 	Time a, b, c;
 	
 
@@ -45,13 +45,13 @@ int main(){
 			  << "Laiks a: " << a << "\n"
 			  << "Laiks b: " << b << "\n\n";
 	
-	cout << "a > b: " << (a > b ? "true\n" : "false\n");
-	cout << "a < b: " << (a < b ? "true\n" : "false\n");
-	cout << "a >= b: " << (a >= b ? "true\n" : "false\n");
-	cout << "a <= b: " << (a <= b ? "true\n" : "false\n");
-	cout << "a == b: " << (a == b ? "true\n" : "false\n");
-	cout << "a != b: " << (a != b ? "true\n" : "false\n");
-	cout << endl;
+	std::cout << "a > b: " << (a > b ? "true\n" : "false\n");
+	std::cout << "a < b: " << (a < b ? "true\n" : "false\n");
+	std::cout << "a >= b: " << (a >= b ? "true\n" : "false\n");
+	std::cout << "a <= b: " << (a <= b ? "true\n" : "false\n");
+	std::cout << "a == b: " << (a == b ? "true\n" : "false\n");
+	std::cout << "a != b: " << (a != b ? "true\n" : "false\n");
+	std::cout << endl;
 	
 	
 	system("pause");
