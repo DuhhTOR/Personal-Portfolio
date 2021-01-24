@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="leasingcalculation.js"></script>
+    <title>Simple Leasing Calculator</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        <table>
+            <thead>
+                <tr>
+                    <td>Summa</td>
+                    <td>Gada procentu likme</td>
+                    <td>Līzinga termiņš</td>
+                    <td>Ikmēneša maksājums</td>
+                    <td>Summa kopā par termiņu</td>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td id="input"><input onchange="monthly()" id="sum" type="text" name="sum" value=""/></td>
+                    <td id="rate">
+                        <select id="selectedRate" onchange="monthly()" name="rate">
+                            <option value="1">7%</option>
+                            <option value="2">10%</option>
+                            <option value="3">15%</option>
+                        </select>
+                    </td>
+                    <td id="due">
+                        <select id="selectedDue" onchange="monthly()" name="due">
+                            <option value="1">6 mēneši</option>
+                            <option value="2">12 meneši</option>
+                            <option value="3">18 mēneši</option>
+                            <option value="4">2 gadi</option>
+                            <option value="5">5 gadi</option>
+                            <option value="6">7 gadi</option>
+                        </select>
+                    </td>
+                    <td id="monthly"></td>
+                    <td id="altogether"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+
+</html>

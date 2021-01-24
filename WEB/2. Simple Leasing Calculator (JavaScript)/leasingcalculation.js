@@ -11,11 +11,13 @@ function monthly() {
 		alert("Summas laukā nedrīkst būt burti vai simboli!");
 	}
 	
+
 	/* Procentu likme */
 	var percent = document.getElementById("selectedRate");
 	var valuePercent = percent.options[percent.selectedIndex].value;
 	var i;
 	
+
 	switch (valuePercent) {
 		case "1":
 			i = 0.07;
@@ -30,6 +32,7 @@ function monthly() {
 			break;
 		}
 	
+
 	/* Līzinga Termiņš */
 	var due = document.getElementById("selectedDue");
 	var valueDue = due.options[due.selectedIndex].value;
@@ -59,10 +62,11 @@ function monthly() {
 		case "6":
 			n = 84;
 			break;
-		}
+	}
 	
+
 	/* Aprēķins */
-	var monthly = K * (   (i / 12) / (1 - (Math.pow( (1 + i / 12), (-n) )))   )
+	var monthly = K * ((i / 12) / (1 - (Math.pow((1 + i / 12), (-n)))))
 	var altogether = monthly * n;
 	
 
