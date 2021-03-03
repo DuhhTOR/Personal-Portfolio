@@ -1,0 +1,60 @@
+.people-list {
+  max-width: 425px;
+}
+
+.people-list .person {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    "image name"
+    "image age";
+  column-gap: 25px;
+}
+
+.person img {
+  height: 100px;
+  width: 100px;
+  margin: 10px 0;
+  grid-area: image;
+  object-fit: cover;
+  box-shadow: 0px 0px 2.5px 2.5px rgba(242, 138, 178, 1);
+  border-radius: 50%;
+}
+
+.people-list h5 {
+  grid-area: name;
+  font-size: 1.25em;
+}
+
+.people-list p {
+  grid-area: age;
+  opacity: 0.75;
+  font-family: "Amatic SC", cursive;
+  font-size: 1.5em;
+}
+
+.btn {
+  height: 75px;
+  width: 100%;
+  max-width: 425px;
+  margin: 50px 0;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(90deg, rgba(212, 15, 161, 1) 0%, rgba(242, 138, 178, 1) 100%);
+  font-size: 1.25em;
+  color: var(--white-grey);
+}
+
+.btn:hover {
+  border: 2.5px solid var(--black);
+}
+
+.btn-hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 375px) {
+  .person img {
+    margin-right: 10px;
+  }
+}

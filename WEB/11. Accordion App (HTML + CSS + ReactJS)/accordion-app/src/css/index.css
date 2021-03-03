@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Blinker:wght@400;600&display=swap");
+
+:root {
+  --background-color: #4b145b;
+  --text-color: #000000;
+  --border-color: #eae6eb;
+  --shadow-color: #7f7e89;
+  --app-color: #ffffff;
+  --button-icon-color: #b4345c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  font-family: "Blinker", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #4b145b;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

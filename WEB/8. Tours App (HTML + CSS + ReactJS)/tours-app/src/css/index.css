@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+:root {
+  --dark: #2b2d42;
+  --grey: #8d99ae;
+  --grey-rgb: 141, 153, 174;
+  --white: #edf2f4;
+  --ligth-red: #ef233c;
+  --dark-red: #d90429;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--grey);
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  max-width: 750px;
+  margin: 5% 5%;
+}
+
+.loading h1,
+.tours h1,
+.refresh h1 {
+  width: 100%;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 2em;
+}
+
+.underline {
+  height: 5px;
+  width: 100px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 5px;
+  background-color: var(--white);
+}
+
+.loading,
+.tours,
+.refresh {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.tours .underline {
+  margin-bottom: 40px;
+}
+
+.tour {
+  width: 100%;
+  margin: 15px 0;
+  display: grid;
+  grid-template-areas:
+    "img img"
+    "name price"
+    "text text"
+    "button button";
+  row-gap: 25px;
+  grid-template-columns: 3fr 1fr;
+  background-color: var(--white);
+  border-radius: 5px;
+  box-shadow: 15px 15px 35px var(--dark);
+}
+
+.tour img {
+  height: 300px;
+  width: 100%;
+  grid-area: img;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.tour h3,
+.tour b,
+.tour p {
+  margin: 0 15px;
+  color: var(--dark);
+}
+
+.tour h3 {
+  grid-area: name;
+  text-align: left;
+  font-size: 1.5em;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+.tour b {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 5px;
+  grid-area: price;
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgba(var(--grey-rgb), 0.25);
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.25em;
+}
+
+.tour p {
+  grid-area: text;
+  text-align: left;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.25em;
+}
+
+.tour .show-btn {
+  margin: 0;
+  padding: 0 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(var(--grey-rgb), 0.25);
+  color: var(--dark);
+  font-family: "Raleway", sans-serif;
+  font-size: 0.9em;
+  transition: background-color 0.5s;
+}
+
+.tour .show-btn:hover {
+  background-color: rgba(var(--grey-rgb), 0.75);
+  cursor: pointer;
+}
+
+.tour .delete-btn {
+  width: 200px;
+  margin: 0 auto 25px auto;
+  padding: 5px 0;
+  grid-area: button;
+  border: 2.5px solid var(--ligth-red);
+  border-radius: 5px;
+  background-color: var(--white);
+  color: var(--ligth-red);
+  transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.tour .delete-btn:hover {
+  border-color: var(--dark-red);
+  background-color: var(--ligth-red);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.refresh button {
+  width: 200px;
+  margin: 0 auto;
+  padding: 5px 0;
+  box-sizing: border-box;
+  border: 2.5px solid var(--dark);
+  border-radius: 5px;
+  background-color: var(--white);
+  transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 1.25em;
+}
+
+.refresh button:hover {
+  border-color: var(--white);
+  background-color: var(--ligth-red);
+  color: var(--white);
+  cursor: pointer;
+}
